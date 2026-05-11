@@ -24,10 +24,10 @@ function getDb() {
 }
 
 // Router
-if ($requestUri === '/' || $requestUri === '/index.html') {
+if ($requestUri === '/') {
     // Serve frontend
     header('Content-Type: text/html');
-    require 'index.html';
+    require 'home.php';
 
 } elseif ($requestUri === '/api/candidates' && $method === 'GET') {
     // Fetch candidates
