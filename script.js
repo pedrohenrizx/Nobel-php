@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Fetch candidates from API
     const fetchCandidates = async () => {
         try {
-            const response = await fetch('api.php');
+            const response = await fetch('/api/candidates');
             if (!response.ok) {
                 throw new Error('Failed to fetch candidates');
             }
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.vote = async (id) => {
         try {
             hideMessages();
-            const response = await fetch('api.php', {
+            const response = await fetch('/api/vote', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
